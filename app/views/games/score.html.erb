@@ -1,0 +1,28 @@
+<h1>Your Results</h1>
+<p>This is your final results and score for the game</p>
+
+<h3><%= params[:word] %></h3>
+<p>-Your word creation</p>
+<br>
+<div class="pathlink">
+  <%= link_to "Play Game Again", new_path %>
+</div>
+
+<h3><%= @message %></h3>
+<!--
+Display: A generator for 10 random letters from the alphabet
+ - new controller: GamesControlelr, add action "GET new"  -> new GET  /new(.:format)   games#new
+ - creat array with @letters instance variable storing these 10 random letters in a grid
+ - Then create a "new" view -> create a view to enter game
+with a form for the user to type a word.
+FORM - see website
+A button to submit this form.
+after submitting, it leads to a solution "score" page
+that includes:
+  - create a results view page
+ a) Score for the speed
+  - create a method "POST score" - score action in controller / route  -> score POST /score(.:format) games#score
+ b) confirmation whether the word exists
+ c) whether it is the longest possible word
+ d) whether the letters in the word are within the scope of the grid
+-->

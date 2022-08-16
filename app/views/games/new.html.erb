@@ -1,0 +1,20 @@
+<h1>THE LONGEST WORD GAME</h1>
+<p>Create the longest possible word from the letters you see below!</p>
+<br>
+<br>
+<div id="letters">
+  <ul>
+    <% @letters.each do |letter| %>
+      <li><%= letter.upcase %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="form" >
+  <form action="/score" method="post" data-turbo="false" class="d-inline-flex">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input class="input-group-text" type="text" name="grid" value="<%= @letters.join %>" style="display: none;">
+    <input class="input-group-text" type="text" name="word">
+    <input class="input-group-text" type="submit" value="Create a word!">
+  </form>
+</div>
